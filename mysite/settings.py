@@ -122,13 +122,22 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_URL = '/static/'  
+
+# STATICFILES_DIRS — это папки с исходными статическими файлами
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # Эта папка должна существовать
+]
+
+# STATIC_ROOT — это место, куда Django копирует файлы при collectstatic
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
